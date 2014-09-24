@@ -26,12 +26,26 @@ h2 {
 	border-bottom-right-radius: 20px;
 }
 
-.fa-times {
-	position: absolute;
-	top:0;
-}
-
 form {
+	margin: 20px 0;
 }
 
+ul.list-group {
+	margin-top: 20px;
+
+}
+
+.remove {
+	float:right;
+}
+
+#button {
+	width: 980px;
+	margin: 0 auto;
+	display: inline-block;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+
+}
 

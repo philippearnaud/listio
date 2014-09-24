@@ -3,10 +3,13 @@ angular.module('todoApp', [])
 		$scope.todos = [
 			];
 
+		var todos = $scope.todos;
+
 //TODO: Faire la validation des mails
 		$scope.addTodo = function() {
-			$scope.todos.push({text:$scope.todoText, done:false});
+			$scope.todos.push({text:$scope.todoText, done:false, id:$scope.todoId});
 			$scope.todoText = '';
+			$scope.todoId = 1;
 		};
 
 		$scope.remaining = function() {
@@ -21,8 +24,11 @@ angular.module('todoApp', [])
 			$scope.todos = [];
 				};
 
+		$scope.remove = function() {
+			todos.splice(this.$index,1);
+		};
+
 		$scope.hasard = function() {
 		   	$scope.todos[Math.floor(Math.random() * $scope.todos.length)];
 				};
-
 	}]);

@@ -19,20 +19,23 @@
 					<div class="input-group">
 					<input class="form-control" type="text" ng-model="todoText" size="30" placeholder="Ajoute l'email d'un collègue" name="email" required autofocus>
 					<span class="input-group-btn">
-						<input class="btn btn-default"  type="submit" value="Ajout d'un mail" >
+						<input class="btn btn-default"  ng-click="todoId = todoId + 1" ng-init="1" type="submit" value="Ajout d'un mail" >
+						<p>  </p>
 				</span>
 				<span class="error" ng-show="myForm.email.$error.required">
 						Ce n'est pas un email valide </span>
 				</div>
 			</form>
 
-		<a href="" ng-click="reset()"><i class="fa fa-times fa-2x">Retour à 0</i></a>
+			<div id="button">
+				<a href="" ng-click="reset()"><i class="fa fa-times fa-2x">Retour à 0</i></a>
+				<a href="#" id="random" ng-click="random()">Random</a> 
+			</div>
 		<span>  <ng-pluralize count="todos.length" when="{
 			'0': 'Bouh, pas de collègue, pas de croissant !', '1':'Un seul collègue, le hasard ne sera pas en ta faveur', 'other':'OUHOU la teuf'}"></span>
 			<ul class="list-group">
-				<li class="list-group-item" ng-repeat="todo in todos">
-					<input type="checkbox" ng-model="todo.done">
-					<span class="done-{{todo.done}}">{{todo.text}}</span>
+				<li class="list-group-item" ng-repeat="todo in todos" >
+				<span data-id="{{ todo.id }}" class="done-{{todo.done}}">{{todo.text}}<a class="remove" ng-click="remove()"	><i class="fa fa-times fa-2x"></i></a></span>
 				</li>
 		</ul>
 		</div>
