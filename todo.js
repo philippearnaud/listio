@@ -3,7 +3,7 @@ angular.module('todoApp', [])
 		$scope.todos = [
 			];
 
-
+//TODO: Faire la validation des mails
 		$scope.addTodo = function() {
 			$scope.todos.push({text:$scope.todoText, done:false});
 			$scope.todoText = '';
@@ -19,5 +19,10 @@ angular.module('todoApp', [])
 
 		$scope.reset = function() {
 			$scope.todos = [];
-		};
+				};
+
+		$scope.hasard = function() {
+		   	$scope.todos[Math.floor(Math.random() * $scope.todos.length)];
+				};
+
 	}]);
