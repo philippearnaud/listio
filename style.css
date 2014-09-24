@@ -4,8 +4,34 @@ body {
 
 h1 {
 	text-align: center;
+	color: white;
+	text-shadow: 1px 3px 2px grey;
+}
+
+h2 {
+	font-size: 20px;
+	text-align: center;
+	font-style: italic;
+}
+
+.jumbotron h1 {
+	color: white;
+
 }
 
 .jumbotron {
 	width: 500px;
-	margin: 0 auto
+	margin: 0 auto;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+
+.fa-times {
+	position: absolute;
+	top:0;
+}
+
+form {
+}
+
+
